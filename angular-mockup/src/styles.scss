@@ -1,1 +1,250 @@
-/* You can add global styles to this file, and also import other style files */
+@import "~bootstrap/scss/functions";
+@import "~bootstrap/scss/variables";
+@import url('https://fonts.googleapis.com/css2?family=Ruda:wght@400;500;900&display=swap');
+
+$body-color: #000000;
+$body-bg: linear-gradient(270deg, #8FB1D3 0%, #8F96D3 100%) repeat;
+$font-family-base: 'Ruda', sans-serif;
+$font-size-base: 1.25rem;
+$font-weight-base: normal;
+$font-weight-bold: bold;
+$line-height-base: 1.5;
+$font-style: normal;
+
+@import "~bootstrap";
+*, *::before, *::after {
+  -webkit-box-sizing: border-box;
+}
+
+html {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  margin: 0 auto;
+
+  font-family: $font-family-base;
+  font-size: $font-size-base;
+  font-style: $font-style;
+  line-height: $line-height-base;
+  font-weight: $font-weight-base;
+  color: $body-color;
+  background: $body-bg;
+
+}
+
+/* Header start */
+svg:hover {
+  fill: #8F96D3;
+}
+
+.header {
+  &__wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+  }
+
+  &__author {
+    margin-top: 30px;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    background: #FFFFFF;
+    box-shadow: 0px 2px 16px #A5BCD2;
+    border-radius: 6px;
+    width: 270px;
+    height: 72px;
+    left: 203px;
+    top: 30px;
+
+    .header__icon {
+      padding: 10px 0 0 5px;
+      cursor: pointer;
+    }
+
+    .header__icon:hover {
+      fill: #8F96D3;
+    }
+
+    .header__section {
+      padding: 11px 10px 10px 0px;
+      display: flex;
+      flex-direction: column;
+
+      .header__text {
+        text-transform: capitalize;
+      }
+
+      .header__name {
+        font-weight: $font-weight-bold;
+      }
+    }
+  }
+}
+
+/* Header end */
+
+/* main start */
+.main {
+  &__wrapper {
+    max-width: 960px;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+
+    .main__card {
+      min-width: 300px;
+      min-height: 360px;
+      background: #FFFFFF;
+      box-shadow: 0px 4px 20px #A5BCD2;
+      border-radius: 6px;
+      margin: 30px 30px 0 0;
+    }
+
+    .main__card:nth-child(3n) {
+      margin-right: 0;
+    }
+
+    .main__card:last-child {
+      margin-right: 0;
+    }
+
+    .main__footer {
+      margin: 30px auto;
+      display: flex;
+      flex-direction: row;
+
+      .main__pagination {
+        width: 50px;
+        height: 50px;
+        background: #FFFFFF;
+        border-radius: 4px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        margin-right: 20px;
+        font-size: 20px;
+        line-height: 23px;
+      }
+
+      .main__pagination-active {
+        color: #7A8FA5;
+      }
+
+      .main__pagination:hover {
+        border: 4px solid #8F96D3;
+        box-sizing: border-box;
+        border-radius: 4px;
+      }
+    }
+  }
+}
+
+/* main end */
+
+/* card start */
+.card {
+  width: 100%;
+  margin: 0 auto;
+  border: none;
+
+  &__header {
+    height: 120px;
+    width: 100%;
+
+    .card__picture {
+      width: 75px;
+      height: 72px;
+      transform: rotate(45deg);
+      overflow: hidden;
+      margin: 18px auto;
+      border-radius: 10px;
+
+      img {
+        max-width: 92%;
+        transform: rotate(-45deg) scale(1.52);
+        z-index: -1;
+        position: relative;
+      }
+    }
+
+    .card__icon {
+      top: 5px;
+      right: 5px;
+      position: absolute;
+      cursor: pointer;
+    }
+  }
+
+  &__body {
+    width: 249px;
+    height: 200px;
+    margin: 0 auto;
+
+    ul {
+      list-style: none;
+      padding-inline-start: 0;
+
+      li {
+        display: flex;
+        justify-content: space-between;
+        border-bottom: 2px solid rgba(122, 143, 165, 0.4);
+        margin-bottom: 10px;
+
+        .cart__text-light {
+          font-size: 16px;
+          line-height: 19px;
+          text-transform: uppercase;
+          color: #7A8FA5;
+
+        }
+
+        .cart__text-spec {
+          max-width: 146px;
+          font-size: 20px;
+          line-height: 24px;
+          text-align: right;
+          font-weight: $font-weight-bold;
+          white-space: nowrap;
+          overflow: hidden;
+          text-overflow: ellipsis;
+        }
+      }
+    }
+  }
+}
+
+/* card end */
+
+@media ( max-width: 958px) {
+  .main {
+    &__wrapper {
+      max-width: 661px;
+      .main__card:nth-child(3n) {
+        margin-right: 30px;
+      }
+    }
+  }
+  .header {
+    &__wrapper {
+      max-width: 661px;
+    }
+  }
+}
+@media ( max-width: 649px) {
+  .main {
+    &__wrapper {
+      max-width: 326px;
+    }
+  }
+  .header {
+    &__wrapper {
+      max-width: 326px;
+    }
+  }
+}
+
+
