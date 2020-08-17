@@ -3,6 +3,7 @@ import {Routes, RouterModule} from '@angular/router';
 
 import {DefaultComponent} from "./layouts/default/default.component";
 import {DashboardComponent} from "./modules/dashboard/dashboard.component";
+import {NotFoundComponent} from "./shared/components/not-found/not-found.component";
 const routes: Routes = [
   {
     path: '',
@@ -11,7 +12,8 @@ const routes: Routes = [
       path: '',
       component: DashboardComponent
     }]
-  }
+  },
+  { path: '**', component: NotFoundComponent}
 ];
 
 @NgModule({
